@@ -25,12 +25,12 @@ h2{
   font-family: 'Abolition Regular' , Helvetica, Arial, sans-serif;
 }
 
-h1 {  
+h1 {
   font-size: 5.625rem; /* 90px/16px  */
   color: rgba(255, 255, 255, 1);
   text-transform: uppercase;
   font-weight: normal;
-  line-height: 1.3; 
+  line-height: 1.3;
   text-shadow: 0 1px 1px rgba(0,0,0,.8);
   margin: 12px 0 0;
 }
@@ -92,9 +92,9 @@ a:active {
 .main-header {
   padding-top: 170px;
   height: 850px;
-  background: linear-gradient(#ffa949, transparent 60%),
-              linear-gradient(0deg, #fff, transparent 40%),
-              #ffa949 url('../img/mountains.jpg') no-repeat center;
+  background: linear-gradient(#69ea5b, transparent 65%),
+              linear-gradient(0deg, #fff, transparent 50%),
+              #69ea5b url('../img/background.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -109,7 +109,7 @@ a:active {
 
 .intro {
   font-size: 1.25em; /* 20px/16px */
-  line-height: 1.6;  
+  line-height: 1.6;
 }
 
 .primary-content,
@@ -149,7 +149,7 @@ a:active {
 
 /* Layout Styles ------------------ */
 
-.primary-content, 
+.primary-content,
 .secondary-content {
   width: 75%;
   padding-left: 50px;
@@ -254,14 +254,4 @@ a:active {
   .main-footer{
     padding:5px 0;
   }
-} 
-
-
-
-
-
-
-
-
-
-
+}
