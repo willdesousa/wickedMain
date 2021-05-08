@@ -8,20 +8,25 @@
     url('../fonts/abolition-regular-webfont.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Kaushan Regular';
+  src: url('../fonts/KaushanScript-Regular.ttf')format('truetype');
+}
+
 /* Base Styles -------------------- */
 * {
   box-sizing: border-box;
 }
 
-body {
-  color: #878787;
+body, textarea, input {
+  color: #000000;
   margin: 0;
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,
-h2 {
-  font-family: 'Abolition Regular', Helvetica, Arial, sans-serif;
+h2, h3 {
+  font-family: 'Kaushan Regular', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -53,12 +58,6 @@ h3 {
   /* 34px */
 }
 
-img {
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
 ul,
 ol {
   margin: 30px 0;
@@ -68,10 +67,9 @@ li {
   margin-bottom: 10px;
 }
 
-div img {
+/* div img {
   box-shadow: 0 15px 20px -12px rgba(0, 0, 0, .8);
-}
-
+} */
 /* Pseudo-classes ------------------ */
 a:link {
   color: #69ea5b;
@@ -79,11 +77,11 @@ a:link {
 }
 
 a:visited {
-  color: lightblue;
+  color: none;
 }
 
 a:hover {
-  color: lightcoral;
+  color: rgba(221, 60, 190, 0.9);
 }
 
 a:active {
@@ -94,43 +92,42 @@ a:active {
 .main-header {
   padding-top: 20px;
   height: 850px;
-  background: linear-gradient(#69ea5b, transparent 65%),
-    linear-gradient(0deg, #fff, transparent 50%),
+  background: linear-gradient(#434744, transparent 65%),
+    linear-gradient(0deg, #ffa949, transparent 60%),
     #69ea5b url('../img/background.jpg') no-repeat center;
   background-size: cover;
 }
 
 .title {
-  color: white;
+  color: rgba(221, 60, 190, 0.9);
   font-size: 1.625rem;
   /* 26px/16px */
   letter-spacing: .065em;
-  font-weight: 200;
+  font-weight: 600;
   border-bottom: 2px solid;
   padding-bottom: 10px;
+  font-family: 'Kaushan Regular', Helvetica, Arial, sans-serif;
 }
 
 .intro {
+  padding-top: 50px;
   font-size: 1.25em;
   /* 20px/16px */
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .primary-content,
 .main-header,
-.main-footer {
+.main-footer,
+.secondary-content {
   text-align: center;
 }
 
-.primary-content {
-  padding-top: 25px;
-  padding-bottom: 95px;
-}
-
+.primary-content,
 .secondary-content {
-  padding-top: 80px;
-  padding-bottom: 70px;
-  border-bottom: 2px solid #dfe2e6;
+  padding-top: 25px;
+  padding-bottom: 35px;
 }
 
 .callout {
@@ -142,10 +139,10 @@ a:active {
 }
 
 .main-footer {
-  height: 250px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  border-bottom: 10px solid #ffa949;
+  padding-bottom: 10px;
+  border-bottom: 10px solid #69ea5b;
+  border-top-right-radius: 10%;
+  font-weight: bold;
 }
 
 .t-border {
@@ -153,13 +150,21 @@ a:active {
 }
 
 /* Layout Styles ------------------ */
-.primary-content,
-.secondary-content {
+.primary-content {
   width: 75%;
   padding-left: 50px;
   padding-right: 50px;
   margin: auto;
   max-width: 960px;
+}
+
+.secondary-content {
+  width: 75%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  max-width: 960px;
+  display: inline;
 }
 
 .wildlife {
@@ -201,6 +206,244 @@ a:active {
   clear: both;
 }
 
+.gap {
+  background: -webkit-linear-gradient(top, rgba(255, 169, 73, 1) 0%, rgba(232, 177, 126, 0) 100%);
+  width: 100%;
+  height: 60px;
+}
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flow-root;
+}
+
+#gallery li {
+  float: left;
+  width: 199px;
+  height: 240px;
+  margin: 10px;
+  background-color: rgba(105, 234, 91, 0.1);
+  color: #878787;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px rgba(255, 169, 73, 0.4);
+}
+
+#gallery li p {
+  font-weight: 600;
+  margin: 0;
+  padding: 5%;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+#gallery li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px;
+}
+
+ul li a:hover {
+  background-color: transparent;
+  color: rgba(221, 60, 190, 0.9);
+}
+
+#gallery li img {
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.gallery {
+  margin-bottom: 30px;
+  padding-left: 10%;
+}
+
+#wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/****************************
+Navigation
+****************************/
+#logo img {
+  display: inline-block;
+  width: 95%;
+  margin-left: 51%;
+}
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li {
+  background: -webkit-linear-gradient(45deg, rgba(4, 180, 10, 1) 0%, rgba(116, 252, 106, 0) 100%);
+  display: inline-block;
+  border-radius: 10px;
+  height: 35px;
+  padding: 2px;
+  margin-right: 20px;
+  opacity: none;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 1px 1px rgba(255, 169, 73, 1);
+  font-weight: 600;
+  padding: 15px 10px;
+}
+
+.nav-bar {
+  /* background: rgb(76, 175, 80,0.5); */
+  /* opacity:0.3; */
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;
+}
+
+/****************************
+Page:Contact
+****************************/
+#contact {
+  height: 600px;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.contact-box {
+  height: auto;
+  width: 100%;
+  background: #69ea5b;
+}
+
+.contact-info {
+  text-align: left;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+}
+
+.contact-info li.phone a {
+  background-image: url('../img/phone.png');
+}
+
+.contact-info li.mail a {
+  background-image: url('../img/mail.png');
+}
+
+.contact-info li.facebook a {
+  background-image: url('../img/facebook.png');
+}
+
+.profile-photo {
+  float: right;
+  display: inline;
+  max-width: 150px;
+  margin: 30px 15px 30px;
+  /*allows to add rounded boders to an element*/
+  border-radius: 50%;
+}
+
+.centerText {
+  text-align: center;
+}
+
+#primary {
+  width: 60%;
+  float: right;
+}
+
+#secondary {
+  display: block;
+  width: 40%;
+  float: left;
+  margin-top: 20px;
+}
+
+/* ************
+Forms
+*********** */
+.form-control {
+  margin-bottom: 2%;
+  border-radius: 1rem;
+  border: 2px solid #dfe2e6;
+  padding-left: 3%;
+}
+
+.txtEmail {
+  float: left;
+  margin-left: 3%;
+  width: 97%;
+  height: 30px;
+}
+
+.txtMsg {
+  margin-left: 3%;
+  width: 97%;
+  height: 150px;
+}
+
+.txtPhone {
+  float: right;
+  width: 47%;
+  height: 30px;
+}
+
+.txtName {
+  float: left;
+  margin-left: 3%;
+  width: 47%;
+  height: 30px;
+}
+
+.contact-image img {
+  display: block;
+  float: left;
+  border-radius: 6rem;
+  width: 25%;
+  margin-top: -3%;
+  transform: rotate(-29deg);
+}
+
+.btnContact {
+  background: #69ea5b;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
 /* Media Queries ------------------ */
 @media (max-width: 1024px) {
 
@@ -231,6 +474,7 @@ a:active {
 
   .title {
     font-size: 1.3rem;
+    font-weight: 500;
     border: none;
   }
 
@@ -244,7 +488,7 @@ a:active {
   }
 
   .intro {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .resorts,
@@ -254,125 +498,108 @@ a:active {
   }
 
   .main-footer {
+    height: 40px;
     padding: 5px 0;
+    padding-bottom: 10px;
+  }
+
+  #primary {
+    width: 50%;
+    float: left;
+  }
+
+  #secondary {
+    width: 40%;
+    float: left;
   }
 }
 
-#gallery {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
+@media screen and (min-width: 480px) {
+
+  /****************************
+	Two Colum layout
+	****************************/
+  /****************************
+	Page: portfolio
+	****************************/
+  #gallery li {
+    width: 40%;
+  }
+
+  /*this it to stop the line is wrapping and the list behaving wired.*/
+  #gallery li:nth-child(3n + 1) {
+    clear: left;
+  }
+
+  #contact {
+    display: block;
+    height: 700px;
+  }
+
+  /****************************
+	Page: About
+	****************************/
+  .profile-photo {
+    display: none;
+
+  }
+
+
+  .txtMsg {
+    margin-left: 3%;
+    width: 97%;
+    height: 150px;
+  }
+
+  .txtPhone {
+    float: left;
+    margin-left: 3%;
+    width: 97%;
+  }
+
+  .txtName {
+    float: left;
+    margin-left: 3%;
+    width: 97%;
+
+  }
+
+  .contact-image img {
+    display: block;
+    float: left;
+    border-radius: 6rem;
+    width: 25%;
+    margin-top: -3%;
+    transform: rotate(-29deg);
+  }
+
+  .btnContact {
+    background: #69ea5b;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
 }
 
-#gallery li {
-  float: left;
-  width: 45%;
-  margin: 2.5%;
-  background-color: #f5f5f5;
-  color: #bdc3c7;
-}
+@media screen and (min-width: 660px) {
 
-#gallery li a p {
-  margin: 0;
-  padding: 5%;
-  font-size: 0.90em;
-  color: #bdc3c7;
-}
+  /****************************
+	Header
+	****************************/
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    width: 25%;
+  }
 
-#wrapper {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-/****************************
-Navigation
-****************************/
-nav {
-  background: blue;
-  text-align: center;
-  padding: 10px 0;
-  margin: 20px 0 0;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0 10px;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-}
-
-nav a {
-  font-weight: 800;
-  padding: 15px 10px;
-}
-
-.nav-bar {
-  float: left;
-  margin: 0 0 130px 0;
-  padding: 5px 0 0 0;
-  width: 100%;
-}
-
-/****************************
-Page:Contact
-****************************/
-#contact {
-  height: 250px;
-  width: 100%;
-  padding: 20px 0;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.contact-info {
-  text-align: left;
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.contact-info a {
-  display: block;
-  min-height: 20px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  padding: 0 0 0 30px;
-  margin: 0 0 10px;
-}
-
-.contact-info li.phone a {
-  background-image: url('../img/phone.png');
-}
-
-.contact-info li.mail a {
-  background-image: url('../img/mail.png');
-}
-
-.contact-info li.facebook a {
-  background-image: url('../img/facebook.png');
-}
-
-.profile-photo {
-  display: block;
-  max-width: 150px;
-  margin: 0 auto 30px;
-  /*allows to add rounded boders to an element*/
-  border-radius: 100%;
-}
-
-#primary {
-  width: 60%;
-  float: right;
-}
-
-#secondary {
-  width: 20%;
-  float: left;
+  #logo {
+    float: left;
+    margin-left: 5%;
+    width: 35%;
+  }
 }
