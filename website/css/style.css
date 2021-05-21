@@ -26,6 +26,7 @@ body, textarea, input {
 
 h1,
 h2, h3 {
+  color: #156d02;
   font-family: 'Kaushan Regular', Helvetica, Arial, sans-serif;
 }
 
@@ -44,32 +45,18 @@ h2 {
   font-size: 3.3125em;
   /* 53px/16px  */
   font-weight: normal;
-  line-height: 1.1;
-  margin: 0 0 .5em;
+  line-height: 0.9;
   /* 0 0 26px */
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1.55em;
   /* 20px/16px  */
-  color: #48525c;
   line-height: 1.2;
-  margin-bottom: 1.7em;
+  margin-bottom: 1em;
   /* 34px */
 }
 
-ul,
-ol {
-  margin: 30px 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* div img {
-  box-shadow: 0 15px 20px -12px rgba(0, 0, 0, .8);
-} */
 /* Pseudo-classes ------------------ */
 a:link {
   color: #69ea5b;
@@ -80,9 +67,6 @@ a:visited {
   color: none;
 }
 
-a:hover {
-  color: rgba(221, 60, 190, 0.9);
-}
 
 a:active {
   color: lightcoral;
@@ -92,8 +76,8 @@ a:active {
 .main-header {
   padding-top: 20px;
   height: 850px;
-  background: linear-gradient(#434744, transparent 65%),
-    linear-gradient(0deg, #ffa949, transparent 60%),
+  background: linear-gradient(#434744, transparent 85%),
+    linear-gradient(0deg, #ffa949, transparent 50%),
     #69ea5b url('../img/background.jpg') no-repeat center;
   background-size: cover;
 }
@@ -166,38 +150,12 @@ a:active {
   max-width: 960px;
   display: inline;
 }
-
-.wildlife {
-  color: white;
-  text-align: left;
-  padding: 18% 24%;
-  border-top: 10px solid #ffa949;
-  margin: 105px 0 60px;
-  background: #434a52 url('../img/bear.jpg') no-repeat center;
-  background-size: cover;
-  box-shadow: 0 15px 20px -12px rgba(0, 0, 0, .8),
-    inset 0 0 50px 10px rgba(0, 0, 0, .9);
-  border-radius: 15px;
-}
-
 .arrow {
   width: 50px;
   margin-top: 150px
 }
 
-/* Floated Columns ------------------ */
-.resorts,
-.tips {
-  width: 46.5%;
-}
 
-.tips {
-  float: left;
-}
-
-.resorts {
-  float: right;
-}
 
 /* Float Clearfix ------------------ */
 .group:after {
@@ -212,6 +170,118 @@ a:active {
   height: 60px;
 }
 
+/*  bar ------------------ */
+.nav-bar{
+  width: 100%;
+  height: 100px;
+  position: relative;
+  display: block;
+}
+.nav-bar ul {
+background-color: rgba(67,71,68, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(67,71,68, 0.6);
+}
+
+.nav-bar ul li {
+  list-style: none;
+  text-align: center;
+  display: block;
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+.nav-bar ul li:last-child{
+  border-right: none;
+}
+.nav-bar ul li a {
+text-decoration: none;
+padding: 10px 50px;
+display: block;
+text-align: center;
+  overflow: hidden;
+}
+ul li .icon{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+
+ul li a .icon .fas {
+width: 100%;
+height: 100%;
+line-height: 40px;
+font-size: 34px;
+transition: 0.5s;
+color: rgba(105, 234, 91, 1);
+}
+
+ul li a:hover .icon .fas {
+  transform: translateY(-100%);
+}
+
+ul li a .icon-name {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  display: block;
+}
+ul li a .icon-name span {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  line-height:20px;
+}
+
+/* ------ Logo ------ */
+#logo {
+  display:block;
+  margin-top:10px;
+  padding: 10px 20px;
+  width: 100%;
+  height: 500px;
+}
+
+#logo img{
+  width: 40%;
+position: inherit;
+top: 50%;
+left: 50%;
+animation: pulse 5s ease infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.2),
+      /* scaling to 0 */
+  }
+
+  50% {
+    transform: scale(1.0);
+    /* increasing the size */
+  }
+
+  100% {
+    transform: scale(1.2);
+    /* seeting back to initial size */
+  }
+}
+
+#intro{
+  width: 100%;
+  display: block;
+}
+
+
+/* ----------------------------------- */
 #gallery {
   margin: 0;
   padding: 0;
@@ -222,13 +292,12 @@ a:active {
 #gallery li {
   float: left;
   width: 199px;
-  height: 240px;
+  height: 250px;
   margin: 10px;
-  background-color: rgba(105, 234, 91, 0.1);
   color: #878787;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 3px rgba(255, 169, 73, 0.4);
+
 }
 
 #gallery li p {
@@ -236,26 +305,23 @@ a:active {
   margin: 0;
   padding: 5%;
   font-size: 1.1em;
-  color: #000000;
+  color: #156d02;
 }
 
 #gallery li a {
   display: block;
   width: 100%;
   text-decoration: none;
-  padding: 5px;
-}
-
-ul li a:hover {
-  background-color: transparent;
-  color: rgba(221, 60, 190, 0.9);
+  padding: 2px;
 }
 
 #gallery li img {
+  box-shadow: 3px rgba(105, 234, 91, 0.5);
   align-items: center;
   max-width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   border-radius: 10px;
+  margin-top: 5px;
 }
 
 .gallery {
@@ -272,49 +338,6 @@ ul li a:hover {
 /****************************
 Navigation
 ****************************/
-#logo img {
-  display: inline-block;
-  width: 95%;
-  margin-left: 51%;
-}
-
-nav {
-  text-align: center;
-  padding: 10px 0;
-  margin: 20px 0 0;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0 10px;
-  padding: 0;
-}
-
-nav li {
-  background: -webkit-linear-gradient(45deg, rgba(4, 180, 10, 1) 0%, rgba(116, 252, 106, 0) 100%);
-  display: inline-block;
-  border-radius: 10px;
-  height: 35px;
-  padding: 2px;
-  margin-right: 20px;
-  opacity: none;
-}
-
-nav a {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 1px 1px rgba(255, 169, 73, 1);
-  font-weight: 600;
-  padding: 15px 10px;
-}
-
-.nav-bar {
-  /* background: rgb(76, 175, 80,0.5); */
-  /* opacity:0.3; */
-  float: left;
-  margin: 0 0 30px 0;
-  padding: 5px 0 0 0;
-  width: 100%;
-}
 
 /****************************
 Page:Contact
@@ -344,10 +367,12 @@ Page:Contact
 }
 
 .contact-info a {
+  font-size: 1em;
+  color: rgba(221, 60, 190, 0.9);
   display: block;
   min-height: 20px;
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-size: 30px 30px;
   padding: 0 0 0 30px;
   margin: 0 0 10px;
 }
@@ -368,8 +393,7 @@ Page:Contact
   float: right;
   display: inline;
   max-width: 150px;
-  margin: 30px 15px 30px;
-  /*allows to add rounded boders to an element*/
+  margin: 0 5% 80px 0;  /*allows to add rounded boders to an element*/
   border-radius: 50%;
 }
 
@@ -429,7 +453,7 @@ Forms
   display: block;
   float: left;
   border-radius: 6rem;
-  width: 25%;
+  width: 20%;
   margin-top: -3%;
   transform: rotate(-29deg);
 }
@@ -442,6 +466,28 @@ Forms
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+
+.contact-image {
+  transform: translate(-50%,-50%);
+
+  animation: rotate 4s linear infinite alternate;
+}
+
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotateX(10deg);
+  }
+
+  50% {
+    transform: rotateY(10deg);
+  }
+
+  80% {
+    transform: rotateX(0turn);
+  }
 }
 
 /* Media Queries ------------------ */
@@ -514,76 +560,6 @@ Forms
   }
 }
 
-@media screen and (min-width: 480px) {
-
-  /****************************
-	Two Colum layout
-	****************************/
-  /****************************
-	Page: portfolio
-	****************************/
-  #gallery li {
-    width: 40%;
-  }
-
-  /*this it to stop the line is wrapping and the list behaving wired.*/
-  #gallery li:nth-child(3n + 1) {
-    clear: left;
-  }
-
-  #contact {
-    display: block;
-    height: 700px;
-  }
-
-  /****************************
-	Page: About
-	****************************/
-  .profile-photo {
-    display: none;
-
-  }
-
-
-  .txtMsg {
-    margin-left: 3%;
-    width: 97%;
-    height: 150px;
-  }
-
-  .txtPhone {
-    float: left;
-    margin-left: 3%;
-    width: 97%;
-  }
-
-  .txtName {
-    float: left;
-    margin-left: 3%;
-    width: 97%;
-
-  }
-
-  .contact-image img {
-    display: block;
-    float: left;
-    border-radius: 6rem;
-    width: 25%;
-    margin-top: -3%;
-    transform: rotate(-29deg);
-  }
-
-  .btnContact {
-    background: #69ea5b;
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-}
-
 @media screen and (min-width: 660px) {
 
   /****************************
@@ -596,10 +572,40 @@ Forms
     margin-right: 5%;
     width: 25%;
   }
+}
 
-  #logo {
-    float: left;
-    margin-left: 5%;
-    width: 35%;
+@media screen and (min-width: 480px) {
+
+  /****************************
+	Two Colum layout
+	****************************/
+  /****************************
+	Page: portfolio
+	****************************/
+  #gallery li {
+    width: 30%;
+  }
+
+  /*this it to stop the line is wrapping and the list behaving wired.*/
+  #gallery li:nth-child(3n + 1) {
+    clear: right;
+  }
+
+  /* #contact {
+    display: block;
+    height: 700px;
+  } */
+
+  /****************************
+	Page: About
+	****************************/
+  .profile-photo {
+
+
   }
 }
+  /* #logo {
+    float: left;
+    margin-left: 5%;
+    width: 15%;
+    /* background-image: url('../img/logomini.png'); */
